@@ -8,16 +8,11 @@
     <section class="container-card">
         <div class="container-card__header">
             <h2 class="container-card__title">Listado de Clientes</h2>
-            <form action="controllers/getClients.php" method="POST">
-                <select class="form__input" name="filter">
-                    <option selected>Filtre la busqueda</option>
-                    <option value="name">Nombre</option>
-                    <option value="lastname">Apellido</option>
-                    <option value="cellphone">Telefono</option>
-                </select>
+            <form action="controllers/getClients.php" method="GET" autocomplete="off">
                 <input type="search" name="search" class="form__input" placeholder="Buscar">
                 <button class="container-card__btn" name="submit" type="submit"><i class="fas fa-search"></i></button>
             </form>
+
         </div>
         <div class="table">
             <table class="table__content">
@@ -32,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <?php include 'controllers/getClients.php'; ?>
+                  <?php include_once 'controllers/getClients.php'; ?>
                   <?php foreach($res as $data): ?>
                     <tr class="table__row">
                         <td class="table__col"><?php echo $data['id']; ?></td>
