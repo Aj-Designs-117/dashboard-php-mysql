@@ -1,6 +1,6 @@
 <?php
 
-$credential = "mysql:host=localhost;dbname=ctrl_escolar";
+$credential = "mysql:host=localhost;dbname=pizzeria";
 $user = 'root';
 $key = null;
 

@@ -5,9 +5,9 @@ include_once 'connectionDB.php';
 
     try{
 
-        $name = $_POST['name']; //Pega este usuario en la columna name: ADMINISTRADOR
-        $password = $_POST['password']; 
-        //PASS DEL SISTEMA: STRSOLUCIONES. Pega este hash en la columna password: $2y$10$KBWmBNXB/wahLXU4r09dQu5F0PmzQhs/.5mi2oJo7/eNeeQkzw5YS
+        $name = $_POST['name']; //usuario: ADMINISTRADOR
+        $password = $_POST['password']; // password: STRSOLUCIONES  
+        //Pega este hash en la columna password: $2y$10$KBWmBNXB/wahLXU4r09dQu5F0PmzQhs/.5mi2oJo7/eNeeQkzw5YS
 
 
         //VERIFICACION DE LA EXISTENCIA DEL USUARIO

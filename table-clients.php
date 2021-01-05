@@ -8,9 +8,9 @@
     <section class="container-card">
         <div class="container-card__header">
             <h2 class="container-card__title">Listado de Clientes</h2>
-            <form action="controllers/getClients.php" method="GET" autocomplete="off">
+            <form action="table-clients.php" method="POST" autocomplete="off">
                 <input type="search" name="search" class="form__input" placeholder="Buscar">
-                <button class="container-card__btn" name="submit" type="submit"><i class="fas fa-search"></i></button>
+                <button class="container-card__btn" type="submit"><i class="fas fa-search"></i></button>
             </form>
 
         </div>

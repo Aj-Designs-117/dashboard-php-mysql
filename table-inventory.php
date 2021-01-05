@@ -8,7 +8,7 @@
     <section class="container-card"> 
     <div class="container-card__header">
             <h2 class="container-card__title">Listado de ingredientes</h2>
-            <form action="#">
+            <form action="table-inventory.php" method="POST" autocomplete="off">
                 <input type="search" name="search" class="form__input" placeholder="Buscar">
                 <button class="container-card__btn" type="submit"><i class="fas fa-search"></i></button>
             </form>
@@ -18,25 +18,33 @@
                 <thead>
                     <tr>
                         <th class="table__title">ID</th>
-                        <th class="table__title">Stock harina</th>
-                        <th class="table__title">Stock vegetales</th>
-                        <th class="table__title">Stock carnes frias</th>
-                        <th class="table__title">Stock de empquetados</th>
-                        <th class="table__title">Fecha de entrega</th>
+                        <th class="table__title">Marca</th>
+                        <th class="table__title">Descripcion</th>
+                        <th class="table__title">Unidad</th>
+                        <th class="table__title">Precio</th>
+                        <th class="table__title">Stock</th>
+                        <th class="table__title">Fecha</th>
+                        <th class="table__title">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table__row">
-                        <td class="table__col">22</td>
-                        <td class="table__col">230 <span>Bolsas</span></td>
-                        <td class="table__col">200 <span>Cajas</span></td>
-                        <td class="table__col">300 <span>Kg</span></td>
-                        <td class="table__col">500 <span>Cajas</span></td>
-                        <td class="table__col">
-                            <a href="edit-clients.php" class="table__btn table__warning"><i class="fas fa-edit"></i></a>
-                            <a href="#" class="table__btn table__danger"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
+                    <?php include_once 'controllers/getInventory.php'; ?>
+                    <?php foreach($res as $data): ?>
+                        <tr class="table__row">
+                            <td class="table__col"><?php echo $data['id']; ?></td>
+                            <td class="table__col"><?php echo $data['brand']; ?></td>
+                            <td class="table__col"><?php echo $data['description']; ?></td>
+                            <td class="table__col"><?php echo $data['unit']; ?></td>
+                            <td class="table__col"><i class="fas fa-dollar-sign"></i> <?php echo $data['price']; ?></td>
+                            <td class="table__col"><i class="fas fa-boxes"></i> <?php echo $data['stock']; ?></td>
+                            <td class="table__col"><?php echo $data['created_at']; ?></td>
+                            <td class="table__col">
+                                <a href="view-Inventory.php?id=<?php echo $data['id']; ?>" class="table__btn table__success"><i class="fas fa-eye"></i></a>
+                                <a href="edit-inventory.php?id=<?php echo $data['id']; ?>" class="table__btn table__warning"><i class="fas fa-edit"></i></a>
+                                <a href="controllers/deleteInventory.php?id=<?php echo $data['id']; ?>" class="table__btn table__danger"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>

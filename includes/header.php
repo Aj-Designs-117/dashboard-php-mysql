@@ -37,7 +37,7 @@
           </a>
         </li>
         <li class="main-menu__item">
-          <a href="ingredients.php" class="main-menu__link">
+          <a href="inventory.php" class="main-menu__link">
             <i class="fas fa-cloud-meatball main-menu__icon-link"></i>
             <p>ingredientes</p>
           </a>
