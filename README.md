@@ -5,7 +5,6 @@
 - Tema: Gestor Administrativo
 - STR SOLUCIONES
 - Ing. Desarrollo de Software
-- Cel. 4776678140
 
 ## Instalacion
 
